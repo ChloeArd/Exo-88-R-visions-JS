@@ -1,14 +1,14 @@
 
 let tableau = [];
 
+let newDiv = document.createElement("div");
+let newDiv2 = document.createElement("div");
+
 document.getElementById("button1").addEventListener("click", function (){
     let valeur = document.getElementById("input1").value;
     //Boucle??
     tableau.push(valeur);
     console.log(tableau);
-
-    let newDiv = document.createElement("div");
-    let newDiv2 = document.createElement("div");
 
     if (valeur <= 10) {
         tableau = tableau[Math.floor(Math.random() * tableau.length)];
@@ -28,7 +28,6 @@ document.getElementById("button1").addEventListener("click", function (){
 
 //Bouton pour afficher un élément aléatoire.
 document.getElementById("aleatoire").addEventListener("click",function () {
-    let newDiv = document.createElement("div");
     tableau = tableau[Math.floor(Math.random() * tableau.length)];
     newDiv.innerHTML = tableau;
     document.body.appendChild(newDiv);
@@ -36,12 +35,14 @@ document.getElementById("aleatoire").addEventListener("click",function () {
 
 //Bouton pour afficher tous les éléments du tableau.
 document.getElementById("integrale").addEventListener("click",function () {
-    let newDiv = document.createElement("div");
     newDiv.innerHTML = tableau.join(" - ");
     document.body.appendChild(newDiv);
 })
 
-//Bouton pour supprimer le dernier élément du tableau
+//Bouton pour supprimer le dernier élément du tableau.
 document.getElementById("supprime1").addEventListener("click", function () {
-
+    tableau.pop();
+    newDiv.innerHTML = tableau;
 })
+
+//Bouton pour supprimer tous les éléments du tableau.
