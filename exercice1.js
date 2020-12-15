@@ -1,48 +1,58 @@
+let board = [];
 
-let tableau = [];
+function value() {
+    let value = document.getElementById("input1").value;
+    board.push(value);
+    console.log(board);
+}
 
-let newDiv = document.createElement("div");
-let newDiv2 = document.createElement("div");
+document.getElementById("button1").addEventListener("click", function () {
+    value();
 
-document.getElementById("button1").addEventListener("click", function (){
-    let valeur = document.getElementById("input1").value;
-    //Boucle??
-    tableau.push(valeur);
-    console.log(tableau);
+    if (board.length === 10) {
+        let div1 = document.createElement("div");
+        board = board[Math.floor(Math.random() * board.length)]
+        div1.innerHTML = "aleatoire directement: " + board;
+        document.getElementById("container").appendChild(div1);
 
-    if (valeur <= 10) {
-        tableau = tableau[Math.floor(Math.random() * tableau.length)];
-        newDiv.innerHTML = tableau;
-        document.body.appendChild(newDiv);
-
-        tableau = tableau[4];
-        newDiv2.innerHTML = "La 5è entrer du tableau: " + tableau;
-        document.body.appendChild(newDiv2);
+        let div2 = document.createElement("div");
+        let size = board[4];
+        console.log(size);
+        div2.innerHTML = "Le 5e mot est: " + size;
+        document.getElementById("container").appendChild(div2);
     }
 
     else {
-        newDiv.innerHTML = "Entrez au moins 10 valeurs";
-        document.body.appendChild(newDiv2);
+        let div3 = document.createElement("div");
+        div3.innerHTML = "Entrez au moins 10 valeurs";
+        document.getElementById("container").appendChild(div3);
     }
-});
-
-//Bouton pour afficher un élément aléatoire.
-document.getElementById("aleatoire").addEventListener("click",function () {
-    tableau = tableau[Math.floor(Math.random() * tableau.length)];
-    newDiv.innerHTML = tableau;
-    document.body.appendChild(newDiv);
-});
-
-//Bouton pour afficher tous les éléments du tableau.
-document.getElementById("integrale").addEventListener("click",function () {
-    newDiv.innerHTML = tableau.join(" - ");
-    document.body.appendChild(newDiv);
 })
-
+//Bouton pour afficher un élément aléatoire.
+document.getElementById("aleatoire").addEventListener("click", function () {
+    value()
+    let div4 = document.createElement("div");
+    board = board[Math.floor(Math.random() * board.length)]
+    div4.innerHTML = "Aleatoire par l'utilisateur: " + board;
+    document.getElementById("container").appendChild(div4);
+})
+//Bouton pour afficher tous les éléments du tableau.
+document.getElementById("integrale").addEventListener("click", function () {
+    value()
+    let div5 = document.createElement("div");
+    //let join = board.join(" - ");
+    div5.innerHTML = board;
+    console.log(board);
+    document.getElementById("container").appendChild(div5);
+})
 //Bouton pour supprimer le dernier élément du tableau.
 document.getElementById("supprime1").addEventListener("click", function () {
-    tableau.pop();
-    newDiv.innerHTML = tableau;
+    value()
+    let div6 = document.createElement("div");
+    div6.innerHTML = board.pop();
+    document.getElementById("container").appendChild(div6);
 })
-
 //Bouton pour supprimer tous les éléments du tableau.
+document.getElementById("supprime2").addEventListener("click", function () {
+
+})
