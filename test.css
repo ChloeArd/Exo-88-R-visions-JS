@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
+
+body {
+    font-family: 'Andika New Basic', sans-serif;
+}
+
+img {
+    width: 70px;
+}
+
+#delete1 {
+    margin-left: 30px;
+}
+
+ul {
+    margin-bottom: 180px;
+}
+
+#input1, #button1,#button2 {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+}
+
+button {
+    background-color: darkcyan;
+    box-shadow: 4px 4px 5px orangered;
+}
+
+#viewport {
+    width: 60%;
+    background-color: coral;
+    height: 1000px;
+    margin: auto;
+}
+
+h1 {
+    width: 100%;
+    background-color: darkseagreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}

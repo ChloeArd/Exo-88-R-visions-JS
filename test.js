@@ -1,6 +1,5 @@
 let board = [];
 
-
 document.getElementById("button1").addEventListener("click", function () {
     let value = document.getElementById("input1").value;
     board.push(value);
@@ -8,15 +7,13 @@ document.getElementById("button1").addEventListener("click", function () {
 
     if (board.length === 10) {
         let div1 = document.createElement("div");
-        let random = board[Math.floor(Math.random() * board.length)]
-        div1.innerHTML = "aleatoire directement: " + random;
+        board = board[Math.floor(Math.random() * board.length)]
+        div1.innerHTML = "aleatoire directement: " + board;
         document.getElementById("container").appendChild(div1);
-        console.log("chiffre aleatoire est " + random);
 
         let div2 = document.createElement("div");
-        console.log("La 5e valeur est " + board[4]);
         let size = board[4];
-        console.log("La 5e valeur est " + size);
+        console.log(size);
         div2.innerHTML = "Le 5e mot est: " + size;
         document.getElementById("container").appendChild(div2);
     }
@@ -30,24 +27,22 @@ document.getElementById("button1").addEventListener("click", function () {
 //Bouton pour afficher un élément aléatoire.
 document.getElementById("aleatoire").addEventListener("click", function () {
     let div4 = document.createElement("div");
-    board = board[Math.floor(Math.random() * board.length)];
+    board = board[Math.floor(Math.random() * board.length)]
     div4.innerHTML = "Aleatoire par l'utilisateur: " + board;
     document.getElementById("container").appendChild(div4);
 })
 //Bouton pour afficher tous les éléments du tableau.
 document.getElementById("integrale").addEventListener("click", function () {
     let div5 = document.createElement("div");
-    let join = board.join(" - ");
-    div5.innerHTML = join;
-    console.log("Bouton pour afficher les éléments du tableau" + board);
-    console.log("Bouton pour afficher les éléments du tableau " + join)
+    //let join = board.join(" - ");
+    div5.innerHTML = board;
+    console.log(board);
     document.getElementById("container").appendChild(div5);
 })
 //Bouton pour supprimer le dernier élément du tableau.
 document.getElementById("supprime1").addEventListener("click", function () {
-    let div6 = document.createElement("div");
-    div6.innerHTML = board.pop();
-    document.getElementById("container").appendChild(div6);
+    tableau.pop();
+    newDiv.innerHTML = tableau;
 })
 //Bouton pour supprimer tous les éléments du tableau.
 document.getElementById("supprime2").addEventListener("click", function () {
