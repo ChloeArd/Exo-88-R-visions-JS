@@ -30,13 +30,15 @@ document.getElementById("button1").addEventListener("click", function () {
 //Bouton pour afficher un élément aléatoire.
 document.getElementById("aleatoire").addEventListener("click", function () {
     let div4 = document.createElement("div");
-    board = board[Math.floor(Math.random() * board.length)];
-    div4.innerHTML = "Aleatoire par l'utilisateur: " + board;
+    let random2 = board[Math.floor(Math.random() * board.length)];
+    div4.innerHTML = "Aleatoire par l'utilisateur: " + random2;
     document.getElementById("container").appendChild(div4);
+    console.log("aleatoire par utilisateur: " + random2);
 })
+
+let div5 = document.createElement("div");
 //Bouton pour afficher tous les éléments du tableau.
 document.getElementById("integrale").addEventListener("click", function () {
-    let div5 = document.createElement("div");
     let join = board.join(" - ");
     div5.innerHTML = join;
     console.log("Bouton pour afficher les éléments du tableau" + board);
@@ -45,11 +47,10 @@ document.getElementById("integrale").addEventListener("click", function () {
 })
 //Bouton pour supprimer le dernier élément du tableau.
 document.getElementById("supprime1").addEventListener("click", function () {
-    let div6 = document.createElement("div");
-    div6.innerHTML = board.pop();
-    document.getElementById("container").appendChild(div6);
+    board.pop();
+    div5.innerHTML = board;
 })
 //Bouton pour supprimer tous les éléments du tableau.
 document.getElementById("supprime2").addEventListener("click", function () {
-
+    div5.innerHTML = " ";
 })
